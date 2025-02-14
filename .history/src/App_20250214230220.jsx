@@ -5,12 +5,11 @@ import ChatMessage from './components/ChatMessage'
 import { companyinfo } from './companyinfo'
 
 const App = () => {
-  // const [chatHistory, setChatHistory] = useState([{
-  //   hideInChat:true,
-  //   role:"model",
-  //   text:companyinfo
-  // }])
-  const [chatHistory, setChatHistory] = useState([])
+  const [chatHistory, setChatHistory] = useState([{
+    hideInChat:true,
+    role:"model",
+    text:companyinfo
+  }])
   const [showChatbot, setShowChatbot] = useState(false)
 
   const chatBodyRef = useRef()
@@ -35,7 +34,7 @@ const App = () => {
         "Authorization": `Bearer ${import.meta.env.VITE_SILICONFLOW_API_KEY}`, 
       },
       body: JSON.stringify({
-        model: "deepseek-ai/DeepSeek-V3",  
+        model: "deepseek-ai/DeepSeek-V2.5",  
         messages: messages,
         stream: false,  
       }),

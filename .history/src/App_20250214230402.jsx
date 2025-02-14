@@ -35,7 +35,7 @@ const App = () => {
         "Authorization": `Bearer ${import.meta.env.VITE_SILICONFLOW_API_KEY}`, 
       },
       body: JSON.stringify({
-        model: "deepseek-ai/DeepSeek-V3",  
+        model: "deepseek-ai/DeepSeek-V2.5",  
         messages: messages,
         stream: false,  
       }),
